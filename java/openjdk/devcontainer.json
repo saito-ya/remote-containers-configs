@@ -1,5 +1,5 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.160.0/containers/docker-existing-dockerfile
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.163.1/containers/docker-existing-dockerfile
 {
 	"name": "Existing Dockerfile",
 
@@ -7,7 +7,7 @@
 	"context": "..",
 
 	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-	"dockerFile": "../Dockerfile.remote-containers",
+	"dockerFile": "../Dockerfile",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
@@ -15,7 +15,9 @@
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [],
+	"extensions": [
+		"vscjava.vscode-java-pack"
+	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
@@ -29,10 +31,9 @@
 	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
 	"mounts": [ 
 		"source=${localEnv:HOME}/.ssh/,target=/root/.ssh/,type=bind,consistency=cached",
-		"source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached",
-		"source=${localEnv:HOME}/.config/git,target=/root/.config/git,type=bind,consistency=cached",
-		"source=${localEnv:HOME}/.aws/credentials.xxx,target=/root/.aws/credentials,type=bind,consistency=cached"
-	 ]
+        "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.config/git,target=/root/.config/git,type=bind,consistency=cached"
+	],
 
 	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
